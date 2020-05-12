@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+class tree;
+tree *createNode(int);
+
+class tree
+{
+	public:
+	int data;
+	tree *right,*left;
+	
+	public: 
+		tree *insertNode(tree*,int);
+		void inOrder(tree*);
+};
+
+tree* createNode(int data)
+{
+	tree *t1 = new tree();
+	t1->data = data;
+	t1->right = NULL;
+	t1->left = NULL;
+	return t1;
+}
+
+tree* tree :: insertNode(tree *root,int data)
+{
+	if(root == NULL)
+	{
+		root = createNode(data);
+	}
+	
+	else if(data > root->data)
+	{
+		root->right = insertNode(root->right, data);
+	}
+	else
+	{
+		root->left = insertNode(root->left ,data);
+	}
+	
+	return root;
+}
+void tree :: inOrder(tree *root)
+{
+	if(root != NULL)
+	{
+		inOrder(root->left);
+		cout<<root->data<<endl;
+		inOrder(root->right);
+	}
+}
+
+int main()
+{
+	tree *root = createNode(10);
+
+	root->insertNode(root, 25);
+	root->insertNode(root, 78);
+	root->insertNode(root, 26);
+	root->insertNode(root, 80);
+	
+	root->inOrder(root);
+
+}
