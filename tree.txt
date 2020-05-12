@@ -41,6 +41,7 @@ tree* tree :: insertNode(tree *root,int data)
 	
 	return root;
 }
+//this is a comment
 void tree :: inOrder(tree *root)
 {
 	if(root != NULL)
@@ -59,7 +60,8 @@ int main()
 	root->insertNode(root, 78);
 	root->insertNode(root, 26);
 	root->insertNode(root, 80);
-	
+	root->insertNode(root, 45);
+        printf("calling root node");
 	root->inOrder(root);
 
 }
