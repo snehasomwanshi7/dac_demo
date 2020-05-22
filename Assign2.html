@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang ="eg">
+
+<head><meta charset="UTF-8">
+	<title> HTML Forms</title>
+</head>
+
+<body>
+	<h3 align="center">Patient details</h3>
+	
+	<form>
+	<fieldset>
+	   <legend>Personal Information</legend>
+		
+	     <table >
+			
+		<tr>
+			<td>
+			First Name:
+				</td>
+				
+				<td>
+				   <input type='text' size='30' maxlength='30'>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Gender:
+				</td>
+				
+				<td>
+				
+					<input type='radio' name= 'gender' value='Female'>FEMALE 
+					<input type='radio' name= 'gender' value='Male'>MALE<br>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Last Name:
+				</td>
+				
+				<td>
+					<input type='text' size='30' maxlength='30'>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Nationality:
+				</td>
+				
+				<td>
+					<select name="dropdown menu">
+					<option value='Canada'>Canadian</option>
+					<option value='India'>Indian</option>
+					<option value='USA'>USA</option>
+                                        <option value='Turkey'>Turkey</option>
+
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Address:
+				</td>
+				
+				<td>
+					<textarea rows='10' cols='50' wrap='physical' >
+					</textarea>
+				</td>
+			</tr>
+			
+		</table>
+	
+	</fieldset>
+	</form><br>
+	
+	
+	<form>
+	<fieldset> 
+		<legend>Medical History</legend>
+		
+		<input type='checkbox' name='option1' value='Smallpox'>Smallpox
+		<input type='checkbox' name='option2' value='Mumps'>Mumps
+		<input type='checkbox' name='option3' value='Dizzness'>Dizziness
+		<input type='checkbox' name='option4' value='Sneezing'>Sneezing
+		
+	</fieldset>
+	</form><br>
+
+	<form>
+	<fieldset> 
+		<legend>Current Medication</legend>
+		
+		Are you currently taking any medication?
+		<input type='radio' name= 'OnMeds' value='Yes'>Yes 
+		<input type='radio' name= 'OnMeds' value='No'>No<br>
+		If you are currently taking medication,please indicate it in the space below:<br>
+		<textarea rows='10' cols='80' wrap='physical' >
+					</textarea>
+		
+	</fieldset>
+	</form>
+	
+	<input type ='submit' value='Submit'>
+	<input type ='reset' value='Reset'>
+	
+</body>
+
+</html>
