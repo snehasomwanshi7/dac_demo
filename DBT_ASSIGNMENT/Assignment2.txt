@@ -1,0 +1,18 @@
+1) Which Field  of the customers table is the primary key?
+--> CNUM is a primary key.
+
+2)What is the 4th column of the customer table?
+--> COMM is 4th column of customer table.
+
+3)What is another word for row?For column?
+-->      Dbms                  Rdbms
+Row------Record                Tuple,row,entity,oppertunity
+
+column---field                 column,attribute,method
+
+4)Why isn't possible to see the first  five rows of a table?
+--> In DBMS data stored sequentially in file,where as in RDBMS table is not a file,every row is file.
+-   Rows of table are scattered all over the DB server HD.
+-   When you insert into table,wherever system finds the free space in the DB server HD it will stored row then.
+-   The reason that RDBMS does this is to speed up the insert statement.
+-   When you select table,the order of rows in the output depends on the row address.
