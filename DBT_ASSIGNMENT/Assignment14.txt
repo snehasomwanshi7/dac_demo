@@ -1,0 +1,50 @@
+Assignment14:-Entering, Deleting,and Changing Field Values.
+NAME:Sneha Somwanshi
+ID:200240520096
+Center:JUHU
+
+
+1) Write a command that puts the following values, in their given order, into the
+salespeople table: city – San Jose, name – Blanco, comm – NULL, cnum – 1100.
+
+--> INSERT INTO salespeople (city,sname,comm,snum) values('San Jose','Blanco', NULL, 1100);
+
+-------------------------------------------------------------------------------------------------------
+
+2) Write a command that removes all orders from customer Clemens from the
+Orders table.
+
+--> 1.SELECT * FROM orders; 
+
+    2.savepoint a;  // savepoint a created 
+
+    3.DELETE FROM orders WHERE cnum IN (SELECT cnum FROM customers WHERE cname='Clemens');
+
+    4.SELECT * FROM orders;
+
+    5.ROLLBACK TO savepoint a; // all the changes after savepoint a will be roll backed.
+
+    6.SELECT * FROM orders;    // output will be original orders table before savepoint a
+  
+--------------------------------------------------------------------------------------------------------
+
+3) Write a command that increases the rating of all customers in Rome by 100.
+
+-->1.SELECT * FROM customers;
+
+   2.savepoint a;  // savepoint a created
+
+   3.UPDATE customers SET rating=rating+100;
+
+   4.SELECT * FROM customers;
+
+   5.ROLLBACK TO savepoint a;  //all the changes after savepoint a will be roll backed.
+
+   6.SELECT * FROM customers;  //output will be original orders table before savepoint a
+
+-------------------------------------------------------------------------------------------------------
+
+4) Salesperson Serres has left the company. Assign her customers to Motika.
+
+--> UPDATE customers SET snum = (SELECT snum FROM salespeople WHERE sname='serres')
+    WHERE snum =(SELECT snum FROM salespeople WHERE sname='Motika');
