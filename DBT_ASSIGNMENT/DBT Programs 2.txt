@@ -1,0 +1,224 @@
+show databases;
+use programs;
+
+------IF Statement program 1------
+
+delimiter //
+create procedure pqr()
+begin
+
+declare x int(4);
+select sal into x from employee where ename ='KING';
+if x>4000 then
+insert into tempp values(x,'High sal');
+end if;
+
+end; //
+delimiter ;
+
+call pqr();
+select * from tempp;
+
+-----------IF ELSE Statement program 2-----------
+
+delimiter //
+create procedure pqr2()
+begin
+
+declare x int(4);
+select sal into x from employee  where ename='KING';
+if x>3000 then
+insert into tempp values(x,'High sal');
+else
+insert into tempp values(x,'Low sal');
+end if;
+
+end; //
+delimiter ;
+
+call pqr2();
+select * from tempp;
+
+-------Nested IF statement program 3------------
+
+delimiter //
+create procedure pqr3()
+begin
+
+declare x int(4);
+select sal into x from employee where ename ='KING';
+if x>4000 then
+insert into tempp values(x,'High sal');
+else
+if x<4000 then
+insert into tempp values(x,'Low sal');
+else 
+insert into tempp values(x,'Medium sal');
+end if;
+end if;
+end; //
+delimiter ;
+
+call pqr3();
+select * from tempp;
+
+-----------ElseIf Statement program 4-----------
+
+delimiter //
+create procedure pqr4()
+begin
+
+declare x int(4);
+select sal into x from employee where ename ='KING';
+if x>4000 then
+insert into tempp values (x,'High sal');
+elseif
+x<4000 then
+insert into tempp values (x,'Low sal');
+else
+insert into tempp values (x,'Medium sal');
+end if;
+
+end; //
+delimiter ;
+
+call pqr4();
+select * from tempp;
+
+---------Boolean statement program 5------
+
+delimiter //
+create procedure pqr5()
+begin
+
+declare x boolean default TRUE;
+if x then
+insert into tempp values (1,'Mumbai');
+end if;
+
+end; //
+delimiter ;
+
+call pqr5();
+select * from tempp;
+
+--------program 6--------
+
+delimiter //
+create procedure pqr7()
+begin
+
+declare x boolean default FALSE;
+if not x then
+insert into tempp values(1,'Delhi');
+end if;
+
+end; //
+delimiter ;
+
+call pqr7();
+select * from tempp;
+
+-----------CASE Statement program 7----------
+
+delimiter //
+create procedure pqr8()
+begin
+
+declare x int(4);
+select sal into x from employee where ename ='KING';
+case
+when x>4000 then
+insert into tempp values (x,'High sal');
+when x<4000 then
+insert into tempp values (x,'Low sal');
+else
+insert into tempp values (x,'Medium sal');
+end case;
+
+end; //
+delimiter ;
+
+call pqr8();
+select * from tempp;
+
+---------While Loop program 8---------
+
+delimiter //
+create procedure pqr9()
+begin
+
+declare x int(4) default 1;
+while x<10 do
+insert into tempp values (x,'in while loop');
+set x=x+1;
+end while;
+
+end; //
+delimiter ;
+
+call pqr9();
+select * from tempp;
+
+----------program 9-----------
+
+delimiter //
+create procedure pqr10()
+begin
+declare x int(4) default 1;
+declare y int(4) default 1;
+while x<10 do
+while y<10 do
+insert into tempp values (y,'in y loop');
+set y=y+1;
+end while;
+insert into tempp values (x,'in x loop');
+set x=x+1;
+end while;
+
+end; //
+delimiter ; 
+
+call pqr10();
+select * from tempp;
+
+-------------Repeat Loop program 10-----------
+
+delimiter //
+create procedure pqr11()
+begin
+
+declare x int(4) default 1;
+repeat
+insert into tempp values (x,'in loop');
+set x=x+1;
+until x>5
+end repeat;
+
+end; //
+delimiter ;
+
+call pqr11();
+select * from tempp;
+
+------------LOOP,LEAVE AND ITERATE Statement program 11-----------
+
+delimiter //
+create procedure pqr12()
+begin
+
+declare x int(4) default 1;
+mno_loop : loop
+if x>10 then
+leave mno;
+end if;
+set x=x+1;
+if mod(x,2) !=0 then
+iterate mno;
+else 
+insert into tempp values (x,'inside loop');
+end if;
+end loop;
+
+end; //
+delimiter ;

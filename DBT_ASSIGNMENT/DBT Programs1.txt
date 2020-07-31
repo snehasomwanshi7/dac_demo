@@ -1,0 +1,159 @@
+show databases;
+create database programs;
+use programs;
+
+create table tempp
+(
+fir int(4),
+sec char(15)
+);
+select * from tempp;
+
+-------program 1------
+
+
+delimiter //
+create procedure abc()
+begin
+
+insert into tempp values(1,'Hello');
+
+end; //
+delimiter ;
+
+call abc();
+select * from tempp;
+
+---------program 2-------
+
+delimiter //
+create procedure abc1()
+begin
+
+declare x int(4);
+set x=10;
+insert into tempp values(x,'Hello');
+
+end; //
+delimiter ;
+
+call abc1();
+select * from tempp;
+
+--------program 3------
+
+delimiter //
+create procedure abc2()
+begin
+
+declare x int(4) default 10;
+insert into tempp values (x,'Hello');
+
+end; //
+delimiter ;
+
+call abc2();
+select * from tempp;
+
+--------program 4-------
+
+delimiter //
+create procedure abc4()
+begin
+
+declare x char(15) default 'CDAC';
+insert into tempp values (1,x);
+
+end; //
+delimiter ;
+
+call abc4();
+select * from tempp;
+
+--------program 5----------
+
+delimiter //
+create procedure abc8()
+begin
+
+declare x char(15) default 'KING';
+declare y float(7,2) default 3000;
+declare z float(2,1) default 0.4;
+declare hra float(7,2);
+set hra = y*z;
+insert into tempp values(y,x);
+insert into tempp values(hra,'HRA');
+
+end; //
+delimiter ;
+
+call abc8();
+select * from tempp;
+
+----------program 6-------
+
+delimiter //
+create procedure abc7(x char(15),y float(7,2),z float(2,1))
+begin
+
+declare hra float(7,2);
+set hra = y*z;
+insert into tempp values(y,x);
+insert into tempp values(hra,'HRA');
+
+end; //
+delimiter ;
+
+call abc7('KING',3000,0.4);
+select * from tempp;
+
+call abc7('SCOTT',2500,0.3);
+select * from tempp;
+
+-------------create employee table-------
+use programs;
+create table employee
+(
+Ename char(15),
+Sal float(7,2),
+job char(15)
+);
+select * from employee;
+insert into employee value ('SCOTT',3000,'CLERK');
+insert into employee value ('KING',5000,'MANAGER');
+
+------------program 7---------
+
+delimiter //
+create procedure abc11()
+begin
+
+declare x int(4);
+select sal into x from employee
+where ename='KING';
+insert into tempp values (x,'KING');
+
+end; //
+delimiter ;
+
+call abc11();
+select * from tempp;
+
+-------program 8-------
+
+delimiter //
+create procedure abc12()
+begin
+
+declare x int(4);
+declare y char(15);
+select sal,job into x,y from employee
+where ename='KING';
+insert into tempp values(x,y);
+
+end; //
+delimiter ;
+
+call abc12();
+select * from tempp;
+  
