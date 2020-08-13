@@ -1,0 +1,32 @@
+.main-cont{
+
+    background-repeat: no-repeat;
+    object-fit: fill;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-1{
+    background-color: blueviolet;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.int-div{
+    background-color: brown;
+    margin: 1%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mid-div{
+    height: 100px;
+    width: 100px;
+    background-color:black;
+    border-radius: 0px 45px;
+}
