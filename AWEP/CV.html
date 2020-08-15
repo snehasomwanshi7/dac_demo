@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin: 0px 120px 0px 120px;
+            /* border: 10px solid black; */
+        }
+
+        .container1 {
+            /* flex: 2; */
+            background-color: cyan;
+            /* border: 1px solid red; */
+            display: flex;
+            height: 350px;
+
+
+        }
+
+        .cont2 {
+
+            display: flex;
+            flex-direction: row;
+            /* border: 3px solid pink; */
+            background-color: purple;
+        }
+
+        .subcont1 {
+            border: 1px solid red;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: blueviolet;
+
+        }
+
+        .subcont2 {
+            border: 1px solid red;
+            flex: 2;
+            background-color: rosybrown;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box1 {
+            border: 2px solid tomato;
+            height: 200px;
+            font-size: 21px;
+
+        }
+
+        .para1 {
+            border: 2px solid red;
+            /* flex: 2; */
+            height: 200px;
+            font-size: 21px;
+        }
+
+        .cnt1 {
+            border: 1px solid red;
+            /* flex: 2; */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            font-size: 40px;
+
+        }
+
+        .cnt1_1 {
+            border: 1px solid red;
+            flex: 1;
+            flex-direction: column;
+
+        }
+
+        .img {
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            border-radius: 150px;
+            margin-left: 15%;
+            /* object-fit: cover; */
+            position: absolute;
+            margin-top: 70px;
+        }
+
+        .img img {
+            height: 100%;
+            border-radius: 150px;
+            width: 100%;
+            object-fit: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container1">
+            <div class="cnt1">
+
+                <div class="cnt1_1">
+                    <div class="img">
+                        <img src="photo.jpg" alt="Avtar">
+                    </div>
+                </div>
+                <div class="cnt1_1"></div>
+            </div>
+            <div class="cnt1">Sneha Somwanshi
+                <p>Web Developer</p>
+            </div>
+        </div>
+        <div class="cont2">
+            <div class="subcont1">
+                <div class="box1">Born
+                    <p>07 June 1997</p>
+                </div>
+                <div class="box1">Contact
+                    <p>Phone No: 8459338187</p>
+                </div>
+                <div class="box1">Languages:
+                    <p>English,Hindi,Marathi</p>
+                </div>
+                <div class="box1">Hobbies:
+                    <p>Art,Sketching,TrekKing,Cooking And Travelling</p>
+                </div>
+
+            </div>
+            <div class="subcont2">
+                <div class="para1">ABOUT
+                    <p>Lorem ipsum, dolor sit amet</p>
+                </div>
+                <div class="para1">Lorem ipsum dolor sit amet</div>
+                <div class="para1">Lorem ipsum dolor sit amet</div>
+                <div class="para1">Lorem ipsum dolor sit amet</div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
