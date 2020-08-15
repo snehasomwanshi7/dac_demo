@@ -1,0 +1,50 @@
+
+
+  .flexcontiner
+  {
+
+    width: 1500px;
+    height: 600px;
+
+    background-color: azure;
+
+    display: flex;
+
+    border: 2px solid black;
+
+      background-image: url(index.jpg);
+
+      background-repeat: no-repeat;
+
+      background-size: cover;
+  }
+
+    .loginflex
+    {
+
+          width:500px;
+
+          height: 500px;
+
+          background-color:rgba(91, 173, 211, 0.8);
+
+          margin: auto;
+
+          border: 1px solid black;
+
+          text-align: center;
+
+          color: black;
+
+          border-radius: 10%;
+
+          text-align: center;
+
+
+    }
+
+      .loginflex form{
+
+          margin-top: 50px;
+
+      }
