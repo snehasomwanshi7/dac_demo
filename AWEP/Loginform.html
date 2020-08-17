@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname","lname","mobileno","birthdate"].value;
+  if (x == "") {
+    alert("Please fill all the credentials!!!!");
+    return false;
+  }
+}
+</script>
+</head>
+<style>
+    h4{
+        color: red;
+    }
+ .container
+        {
+            height: 450px;
+            width: 350px;
+            justify-content: center;
+            border: 2px solid red;
+            display: flex;
+            background-color:skyblue;
+            margin-bottom: 100px;
+            margin-left: 100px;
+            font-family: cursive;
+            color: red;
+            /*background-image: url('https://media.istockphoto.com/photos/misty-background-atmosphere-of-silent-hill-winter-fog-picture-id1128714691?k=6&m=1128714691&s=170667a&w=0&h=grcD0GkXerFgwuTqEjpR_qH_hOrk2RnJ46mabA00woU=');
+           
+           background-repeat:no-repeat;*/
+           
+            /flex properties/
+            flex-direction: row;
+            flex-wrap: wrap;
+             
+            
+             padding: 40px;
+        }
+
+        </style>
+<body>
+  
+<div class="container" >
+    <h4><b>Student Registration Form</b></h4>  
+<form name="myForm" action="https://dacroom.web.app/home" onsubmit="return validateForm()" method="post"><br><br>
+    <label for=""> First Name:</label><br>
+    <input type="text" name="fname" placeholder="Type here" > <br>
+    <label for=""> Last Name:</label><br>
+  <input type="text" name="lname" placeholder="Type here"placeholder="Type here"><br>
+  <label for="">DOB:</label><br>
+   <input type="text" name="fname" placeholder="Type here"> <br>
+  <label for=""> Adhar No:</label><br>
+  <input type="number" name="birthdate" placeholder="Type here"> <br>
+  <label for="">Mobile No:</label><br>
+  <input type="number" name="mobileno"placeholder="Type here" ><br><br>
+
+  <button>Submit</button>
+  
+  
+</form>
+</div>
+
+</body>
+</html>
