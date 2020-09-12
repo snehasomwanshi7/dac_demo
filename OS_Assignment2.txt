@@ -1,0 +1,263 @@
+Assignment 2
+Name:Sneha Somwanshi
+Roll NO:200240520096
+
+
+
+1. Write a script to create 10 directories, say a1,a2,...,a10
+Report error if a directory/file exists with the same name.
+
+->
+   # mkdir a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
+
+2. Write a menu based script to perform following string operations
+
+->
+
+   a) To find length of a string
+
+    -># echo -n cdac | wc -m
+        4
+   b) Copying string
+
+    d) Concatenation of strings
+
+   ->obj1="hello"
+     obj2="cdac"
+     obj3="$obj1 $obj2"
+      echo "$obj3"
+     
+       #./concat.sh
+        hello cdac
+
+
+
+     e) Compare two strings
+
+      ->
+
+       str1="hello juhu";
+       str2="hello kharghar";
+
+      if [ "$str1" = "$str2" ];then
+          echo "strings are equal";
+      else
+        echo "strings are nt equal";
+       fi
+    
+         # ./comapre-if.sh
+          strings are nt equal
+      f) Reversing a string
+ 
+         ->
+      # echo "express" | rev
+       sserpxe
+
+  3.Write a shell script to rename all files in the current directory with numeric continuous value
+
+-># mv shell-differ.sh differ.sh
+
+
+ 4. Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,$LOGNAME,$TERM)
+
+->
+   ~# echo $HOME
+    /root
+    
+    # echo $HISTORY,# echo $PATH
+     
+     # echo $SHELL
+     /bin/bash
+
+     # echo $LOGNAME
+      root
+
+     # echo $TERM
+     xterm-256color
+    
+
+5. Write a shell script to print all files permissions in current directory(Not name or other details)(Use cut commands)
+-> # ls -l 
+
+6. Write a shell script to print all files permissions and name of file.
+ -> # ls -al  
+
+7.Write a shell script to print all files name and size greater than 5K
+->
+  # find -type f -size +5k -ls
+
+---------------------------------------------------------------------------------------------------------------------
+
+1. Write a script To check given year is leap or not.
+
+->
+   echo "enter year";
+read year;
+
+if [ $(($year % 4)) -eq "0" ]; then
+if [ $(($year % 100)) -eq "0" ]; then
+        if [ $(($year % 400)) -eq "0"]; then
+                echo "given year leap"
+        else
+                echo "given year is not leap"
+        fi
+       else
+               echo "given year is leap year"
+       fi
+       else
+               echo "given year is not leap"
+               fi
+                            
+2. Write a script to print day of the week using
+	a) elif	
+-> echo "enter your choice 1 to 7"
+read input
+if [[ $input -eq "1" ]]; then
+        echo "sunday"
+elif [[ $input -eq "2" ]]; then
+        echo "monday"
+elif [[ $input -eq "3" ]]; then
+        echo "Tuesday"
+elif [[ $input -eq "4" ]]; then
+        echo "Wednesday"
+elif [[ $input -eq "5" ]]; then
+        echo "Thursday"
+elif [[ $input -eq "6" ]]; then
+        echo "Friday"
+elif [[ $input -eq "7" ]]; then
+        echo "Saturday"
+else
+        echo "invalid input"
+fi
+~         
+
+
+3. a) Write a script to find biggest of three no.s
+
+->echo "enter the first number : "
+read num1
+echo "enter the Second number : "
+read num2
+echo "enter the third number : "
+read num3
+
+if [ "$num1" -gt "$num2" ] && [ "$num1" -gt "$num3" ]; then
+        echo "$num1 is greater"
+elif [ "$num2" -gt "$num1" ] && [ "$num2" -gt "$num3" ]; then
+        echo "$num2 is greater"
+else
+        echo "$num3 is greater"
+fi
+
+
+b) To find avg of 3 no.s, read no.s from keyboard
+
+->echo "enter first no : "
+read num1
+echo "enter second no : "
+read num2
+echo "enter third no : "
+read num3
+
+sum=$(($num1 + $num2 + $num3))
+avg=$(($sum / 3))
+echo "Sum of given num is : $sum"
+echo "Average is : $avg"
+~                           
+
+4. Write a program to check wahether given no.is even or odd
+
+-> echo "enter number : "
+read num
+if [ $((num%2)) -eq 0 ]; then
+        echo "number is even"
+else
+        echo "number is odd"
+fi
+
+5. Write a program to print calendar of current month in next year,previous years.
+
+->For eg:-sep 2014,sep 2012 if current month is sep 2013	
+
+
+6.Write a program to find sum and product of two no.s using let,expr,bc
+
+->
+a)let :
+
+a=10
+b=40
+
+sum=$(( $a + $b ))
+echo $sum
+     
+b)expr :
+        echo "Enter first number"
+       read num1
+       echo "enter second no ::"
+       read num2
+       sum = `expr $num1 + $num2`
+       echo  "sum is = $sum"
+
+c) bc :
+              # echo 'scale=4;10+20' | bc
+               30
+
+7. Write a script to generate Fibonacci series.
+
+->   
+  
+n=10
+a=0
+b=1
+echo "fibonacci series is ::"
+for (( i=0; i<n; i++ ))
+do
+        echo -n "$a "
+        fn=$((a + b))
+        a=$b
+        b=$fn
+done
+
+8. Write a shell script to reverse the single strings. 
+
+->
+
+    # echo "hello world" | rev
+     dlrow olleh
+
+
+9.Write a shell script to reverse the list of strings and   reverse each string further in the list.
+
+-> input="$1"
+reverse="Sneha"
+ 
+len=${#input}
+for (( i=$len-1; i>=0; i-- ))
+do 
+	reverse="$reverse${input:$i:1}"
+done
+ 
+echo "$reverse"
+
+10. Write a shell script to print the reverse of an input number.
+
+-> read -p "enter a number : " num
+    enter a number : 100
+    # echo $num | rev
+     001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
