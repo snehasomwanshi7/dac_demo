@@ -1,7 +1,3 @@
-Name-Sneha Manik Somwanshi
-Roll No-200240520096
-
-
 43.	Create a class OneBHK with instance variables roomArea, hallArea and price.
 	Then create default constructor that initializes instance variables with some values and a parameterized constructor that takes values for all instance variables and stores them in instance variables. 
 	Now create a method named show()  to print OneBHK’s instance variable values.

@@ -164,7 +164,7 @@ ans:
 output:
 		Enter Empoyee ID, Name and Salary:
 		12
-		rahul
+		sneha
 		1000
 		Income tax on yearly salary: 1260.0
 
