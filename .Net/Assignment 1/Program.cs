@@ -3,187 +3,88 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
-namespace Employee
+namespace BasicClassConcepts
 {
     class Program
     {
+        static void oldMain(string[] args)
+        {
+
+            //System.Console.WriteLine("Hello World!");
+            //Console.ReadLine();
+
+            //  System.Data.DataSet ds = new System.Data.DataSet();
+            //  DataSet ds = new DataSet();
+        }
+
         static void Main()
         {
-            Employee1 e = new Employee1();
+            // class1 o;   // o  is a ref of type Class1
+            // o = new class1();  // allocate memory for an obj of type class1 and make to point to it.
+
+            class1 o = new class1();
+            o.Display();
+            o.Display("Sneha");
 
 
+            // positional parameters
+            Console.WriteLine(o.Add(10, 20, 30, 40));
+            Console.WriteLine(o.Add(10, 20, 30));
+            Console.WriteLine(o.Add(10, 20));
+            Console.WriteLine(o.Add(10));
+            Console.WriteLine(o.Add());
+            Console.WriteLine();
 
-            Employee1 e1 = new Employee1();
-            e1.NAME = "Sneha";
-            Console.WriteLine(e1.NAME);
-
-            e.BASIC = 200000;
-            Console.WriteLine("basic salary = " + e.BASIC);
-
-
-
-            e.DEPTNO = 1;
-            Console.WriteLine(e.DEPTNO);
-
-            e.DEPTNO = -2;
-            Console.WriteLine(e.DEPTNO);
+            //named parameters
+            Console.WriteLine(o.Add(d: 40));
+            Console.WriteLine(o.Add(c: 30));
+            Console.WriteLine(o.Add(d: 40, c: 30));
 
 
-            Employee1 o1 = new Employee1("Sneha", 65431, 10);
-            Employee1 o2 = new Employee1("Sneha", 65431);
-            Employee1 o3 = new Employee1("Sneha");
-            Employee1 o4 = new Employee1();
-
-            Employee1 o5 = new Employee1();
-            Employee1 o6 = new Employee1();
-            Console.WriteLine("netsalary is " + e.GetNetSalary());
+            //Console.WriteLine(o.Add2(d: 40));   // Error
+            //Console.WriteLine(o.Add2(a: 30));   // Error
+            Console.WriteLine(o.Add2(d: 40, c: 30, a: 40, b: 30));
 
             Console.ReadLine();
 
 
         }
     }
-    class Employee1
+    public class class1
     {
-
-
-        public Employee1()
+        public void Display()
         {
-            EmpNo++;
-            Console.WriteLine("Employee_No =" + EmpNo);
-
+            Console.WriteLine("Display");
         }
 
-        public Employee1(String NAME, decimal BASIC, short DEPTNO)
+        // func overloading 
+        public void Display(string s)
         {
-            this.NAME = NAME;
-            this.BASIC = BASIC;
-            this.DEPTNO = DEPTNO;
-
-            Console.WriteLine(NAME + "" + BASIC + "" + DEPTNO);
+            Console.WriteLine("Display" + s);
         }
 
-        public Employee1(String NAME, decimal BASIC)
+        // optional parameters with default values
+        public int Add(int a = 0, int b = 0, int c = 0, int d = 0)
         {
-            this.NAME = NAME;
-            this.BASIC = BASIC;
-
-            Console.WriteLine(NAME + "" + BASIC);
+            return a + b + c + d;
         }
+        //public int Add(int a, int b, int c)
+        //{
+        //    return a + b + c;
+        //}
+        //public int Add(int a, int b)
+        //{
+        //    return a + b;
+        //}
 
-
-        public Employee1(String NAME)
+        public int Add2(int a, int b, int c, int d)
         {
-            this.NAME = NAME;
-
-            Console.WriteLine("Emp_Name = " + NAME);
-
+            return a + b + c + d;
         }
-
-        #region properties
-        private string name;
-
-        public string NAME
-        {
-            set
-            {
-                if (value != "")
-                {
-                    name = value;
-                }
-                else
-                {
-
-                    Console.WriteLine("please enter valid input!!!!!!!!");
-
-                }
-
-            }
-            get
-            {
-
-                return name;
-            }
-
-        }
-        #endregion
-
-        #region properties
-        private decimal Basic;
-
-        public decimal BASIC
-        {
-
-            set
-            {
-                if (value > 100000 && value < 999999)
-                {
-                    Basic = value;
-                }
-                else
-                {
-                    Console.WriteLine("invalid basic salary");
-                }
-            }
-            get
-            {
-
-                return Basic;
-            }
-
-        }
-        #endregion
-
-        #region properties
-        private short DeptNo;
-
-        public short DEPTNO
-        {
-            set
-            {
-                if (value > 0)
-                {
-                    DeptNo = value;
-                }
-                else
-                {
-                    Console.WriteLine("invalide department No");
-                }
-            }
-            get
-            {
-
-                return DeptNo;
-            }
-        }
-        #endregion
-
-
-        #region properties
-        private int EmpNo;
-
-        public int EMPNO
-        {
-
-            get
-            {
-                return EMPNO;
-            }
-        }
-        #endregion
-
-        #region method
-        public decimal GetNetSalary()
-        {
-            decimal basic = 100000;
-            decimal hra = 60000;
-            decimal da = 50000;
-
-            decimal netSalary = basic + hra + da;
-
-            return netSalary;
-        }
-        #endregion
     }
 }
+
+
+
