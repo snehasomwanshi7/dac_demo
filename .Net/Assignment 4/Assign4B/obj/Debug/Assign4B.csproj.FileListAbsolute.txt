@@ -1,0 +1,6 @@
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\bin\Debug\Assign4B.exe.config
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\bin\Debug\Assign4B.exe
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\bin\Debug\Assign4B.pdb
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\obj\Debug\Assign4B.csproj.CoreCompileInputs.cache
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\obj\Debug\Assign4B.exe
+F:\CDAC\Module 10 Dot Net\Practise\Assign4A\Assign4B\obj\Debug\Assign4B.pdb

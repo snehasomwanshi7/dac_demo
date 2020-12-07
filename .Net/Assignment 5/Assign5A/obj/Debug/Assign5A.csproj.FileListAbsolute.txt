@@ -1,0 +1,7 @@
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\bin\Debug\Assign5A.exe.config
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\bin\Debug\Assign5A.exe
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\bin\Debug\Assign5A.pdb
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\obj\Debug\Assign5A.csprojAssemblyReference.cache
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\obj\Debug\Assign5A.csproj.CoreCompileInputs.cache
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\obj\Debug\Assign5A.exe
+F:\CDAC\Module 10 Dot Net\Practise\Assign5A\Assign5A\obj\Debug\Assign5A.pdb
